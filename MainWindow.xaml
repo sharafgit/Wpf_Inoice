@@ -85,18 +85,26 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Button x:Name="btnAdd" Grid.Column="0" Grid.Row="0">Add Name</Button>
-                    <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnAdd" Grid.Column="0" Grid.Row="0" Click="btnAdd_Click" >Add Item</Button>
+                    <TextBox x:Name="txtName" Grid.Column="2" Grid.Row="0"/>
+                    <Button x:Name="btnDal" Grid.Column="1" Grid.Row="0" Click="btnDal_Click" >Delete Item</Button>
 
+
+                    <ListView x:Name="ItemsListView" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4">
+                        <ListViewItem Content="Item 1" />
+                        <ListViewItem Content="Item 2" />
+                        <ListViewItem Content="Item 3" IsSelected="True" />
+                        <ListViewItem Content="Item 4" />
+                        <ListViewItem Content="Item 5" />
+                    </ListView>
                 </Grid>
             </Border>
         </StackPanel>

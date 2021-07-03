@@ -47,5 +47,16 @@ namespace Wpf_Inoice
         {
             MessageBox.Show($"Hello:-(Name:{CustomerName.Text})-(Date:{Date.Text} )-(Company: {company.Text})-(Count:{count.Text})-(Price:{price.Text})-(Item Name:{itemName.Text})");
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+            ItemsListView.Items.Add(txtName.Text);
+        }
+
+        private void btnDal_Click(object sender, RoutedEventArgs e)
+        {
+            ItemsListView.Items.RemoveAt(ItemsListView.Items.IndexOf(ItemsListView.SelectedItem));
+        }
     }
 }
