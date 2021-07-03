@@ -6,66 +6,97 @@
         xmlns:local="clr-namespace:Wpf_Inoice"
         mc:Ignorable="d" FontSize="18" FontFamily="Calibri"
         Title="Invoice" Height="750" Width="500">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="10" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="50" 
-                   Text="E-Invoice" Grid.ColumnSpan="3"
-                  Margin="5,0,0,5" />
-        <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="Light" FontFamily="Segoe UI"
+    <Border Padding="10">
+        <StackPanel>
+            <Border Padding="10">
+                <!--This Is Grid One-->
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Column="0" Grid.Row="0" FontSize="50" 
+                                 Text="E-Invoice" Grid.ColumnSpan="3"
+                                 Margin="5,0,0,5" />
+          
+                    <TextBlock Grid.Column="0" Grid.Row="1" 
                    Text="Customer Name:"/>
-        <TextBox x:Name="CustomerName" Grid.Column="2" Grid.Row="2"
+                    <TextBox x:Name="CustomerName" Grid.Column="1" Grid.Row="1" Width="200"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Date:"/>
+                    <TextBox x:Name="Date" Grid.Column="1" Grid.Row="2"
                  Width="200"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="3" FontWeight="Light" FontFamily="Segoe UI"
-                   Text="Date:"/>
-        <TextBox x:Name="Date" Grid.Column="2" Grid.Row="3"
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Company:"/>
+                    <TextBox x:Name="company" Grid.Column="1" Grid.Row="3"
                  Width="200"/>
-
-        <TextBlock Grid.Column="1" Grid.Row="4" FontWeight="Light" FontFamily="Segoe UI"
-                   Text="Company:"/>
-        <TextBox x:Name="company" Grid.Column="2" Grid.Row="4"
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Count:"/>
+                    <TextBox x:Name="count" Grid.Column="1" Grid.Row="4"
                  Width="200"/>
-        <TextBlock Grid.Column="1" Grid.Row="5" FontWeight="Light" FontFamily="Segoe UI"
-                   Text="Count:"/>
-        <TextBox x:Name="count" Grid.Column="2" Grid.Row="5"
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="Price:"/>
+                    <TextBox x:Name="price" Grid.Column="1" Grid.Row="5"
                  Width="200"/>
-        <TextBlock Grid.Column="1" Grid.Row="6" FontWeight="Light" FontFamily="Segoe UI"
-                   Text="Price:"/>
-        <TextBox x:Name="price" Grid.Column="2" Grid.Row="6"
+                    <TextBlock Grid.Column="0" Grid.Row="6" Text="Item Name:"/>
+                    <TextBox x:Name="itemName" Grid.Column="1" Grid.Row="6"
                  Width="200"/>
-        <TextBlock Grid.Column="1" Grid.Row="7" FontWeight="Light" FontFamily="Segoe UI"
-                   Text="Item Name:"/>
-        <TextBox x:Name="itemName" Grid.Column="2" Grid.Row="7"
-                 Width="200"/>
-
-
-
-
-        <Button x:Name="view" Content="Display Data" Grid.Column="2" 
-                Grid.Row="8" Click="view_Click" />
-        <Button x:Name="print" Content="Print" Grid.Column="2" 
-                Grid.Row="9" Click="print_Click" />
-
-    </Grid>
+                </Grid>
+            </Border>
+            <!--This Is Grid Two-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="view" Content="Display Data" Grid.Column="3" 
+                Grid.Row="2" Click="view_Click" />
+                <Button x:Name="print" Content="Print" Grid.Column="3" 
+                Grid.Row="3" Click="print_Click" />
+            </Grid>
+            
+            <!--This Is Grid Three-->
+            <Border Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            
+                <Button x:Name="btnAdd" Grid.Column="0" Grid.Row="0">Add Name</Button>
+                <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" />
+                
+            </Grid>
+            </Border>
+        </StackPanel>
+    </Border>
 </Window>
