@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Wpf_Inoice"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+
     </Application.Resources>
 </Application>
